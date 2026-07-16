@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Eingabe erfassen</title>
+  <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="shell">
+    <section id="step-entry" class="panel" aria-labelledby="entry-heading">
+      <h1 id="entry-heading">Angaben erfassen</h1>
+      <p class="intro">Trage Name und Bemerkung ein. Vor dem Speichern werden die Angaben nochmals angezeigt.</p>
+
+      <form id="entry-form" novalidate>
+        <label for="name">Name <span aria-hidden="true">*</span></label>
+        <input id="name" name="name" type="text" maxlength="100" autocomplete="name" required>
+        <p id="name-error" class="error" role="alert" hidden>Bitte einen Namen eingeben.</p>
+
+        <label for="remark">Bemerkung</label>
+        <textarea id="remark" name="remark" rows="7" maxlength="2000" placeholder="Bemerkung eingeben"></textarea>
+        <div class="counter"><span id="remark-count">0</span>/2000</div>
+
+        <div class="actions">
+          <button type="button" class="secondary" id="cancel-entry">Abbrechen</button>
+          <button type="submit" class="primary">Weiter zur Prüfung</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="step-confirm" class="panel" aria-labelledby="confirm-heading" hidden>
+      <h1 id="confirm-heading">Angaben prüfen</h1>
+      <p class="intro">Bitte kontrolliere die Angaben vor der verbindlichen Bestätigung.</p>
+
+      <dl class="summary">
+        <div>
+          <dt>Name</dt>
+          <dd id="summary-name"></dd>
+        </div>
+        <div>
+          <dt>Bemerkung</dt>
+          <dd id="summary-remark"></dd>
+        </div>
+      </dl>
+
+      <label class="confirm-check">
+        <input id="confirm-checkbox" type="checkbox">
+        <span>Ich habe die Angaben geprüft und bestätige sie verbindlich.</span>
+      </label>
+
+      <p id="save-status" class="status" role="status" aria-live="polite"></p>
+
+      <div class="actions">
+        <button type="button" class="secondary" id="back-entry">Zurück und bearbeiten</button>
+        <button type="button" class="primary" id="confirm-entry" disabled>Verbindlich bestätigen</button>
+      </div>
+    </section>
+
+    <section id="step-success" class="panel success" aria-labelledby="success-heading" hidden>
+      <div class="success-mark" aria-hidden="true">✓</div>
+      <h1 id="success-heading">Eingabe gespeichert</h1>
+      <p>Die Eingabe wurde an dieser Trello-Karte gespeichert.</p>
+      <button type="button" class="primary full" id="close-modal">Fenster schließen</button>
+    </section>
+  </main>
+
+  <script src="https://p.trellocdn.com/power-up.min.js"></script>
+  <script src="./modal.js"></script>
+</body>
+</html>
