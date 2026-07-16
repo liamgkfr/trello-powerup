@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eingabe erfassen</title>
+  <title>Eingabe</title>
   <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <main class="shell">
     <section id="step-entry" class="panel" aria-labelledby="entry-heading">
-      <h1 id="entry-heading">Angaben erfassen</h1>
-      <p class="intro">Trage Name und Bemerkung ein. Vor dem Speichern werden die Angaben nochmals angezeigt.</p>
+      <h1 id="entry-heading">Eingabe</h1>
+      <p class="intro">Name und Bemerkung eintragen. Mit „Eingabe“ werden der Kommentar gespeichert und die Karte als erledigt markiert.</p>
 
       <form id="entry-form" novalidate>
         <label for="name">Name <span aria-hidden="true">*</span></label>
@@ -22,44 +22,13 @@
         <textarea id="remark" name="remark" rows="7" maxlength="2000" placeholder="Bemerkung eingeben"></textarea>
         <div class="counter"><span id="remark-count">0</span>/2000</div>
 
+        <p id="save-status" class="status" role="status" aria-live="polite"></p>
+
         <div class="actions">
           <button type="button" class="secondary" id="cancel-entry">Abbrechen</button>
-          <button type="submit" class="primary">Weiter zur Prüfung</button>
+          <button type="submit" class="primary" id="submit-entry">Eingabe</button>
         </div>
       </form>
-    </section>
-
-    <section id="step-confirm" class="panel" aria-labelledby="confirm-heading" hidden>
-      <h1 id="confirm-heading">Angaben prüfen</h1>
-      <p class="intro">Bitte kontrolliere die Angaben vor der verbindlichen Bestätigung.</p>
-
-      <dl class="summary">
-        <div>
-          <dt>Name</dt>
-          <dd id="summary-name"></dd>
-        </div>
-        <div>
-          <dt>Bemerkung</dt>
-          <dd id="summary-remark"></dd>
-        </div>
-      </dl>
-
-      <label class="confirm-check">
-        <input id="confirm-checkbox" type="checkbox">
-        <span>Ich habe die Angaben geprüft und bestätige sie verbindlich.</span>
-      </label>
-
-      <div id="authorization-box" class="authorization" hidden>
-        <p>Damit das Power-Up einen Kommentar erstellen und die Karte als erledigt markieren darf, musst du den Trello-Zugriff einmalig erlauben.</p>
-        <button type="button" class="secondary full" id="authorize-trello">Trello-Zugriff erlauben</button>
-      </div>
-
-      <p id="save-status" class="status" role="status" aria-live="polite"></p>
-
-      <div class="actions">
-        <button type="button" class="secondary" id="back-entry">Zurück und bearbeiten</button>
-        <button type="button" class="primary" id="confirm-entry" disabled>Verbindlich bestätigen</button>
-      </div>
     </section>
 
     <section id="step-success" class="panel success" aria-labelledby="success-heading" hidden>

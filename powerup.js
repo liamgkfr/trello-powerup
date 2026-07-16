@@ -4,20 +4,22 @@
 const BASE_URL = new URL('./', window.location.href).href;
 const CONFIG = window.POWER_UP_CONFIG;
 
+function openEntryModal(t) {
+  return t.modal({
+    url: BASE_URL + 'modal.html',
+    title: 'Eingabe',
+    height: 560,
+    fullscreen: false
+  });
+}
+
 TrelloPowerUp.initialize({
-  'card-buttons': function cardButtons() {
+  'card-detail-badges': function cardDetailBadges() {
     return [{
-      icon: BASE_URL + 'icon.svg',
-      text: 'Eingabe erfassen',
-      condition: 'always',
-      callback: function openEntryModal(t) {
-        return t.modal({
-          url: BASE_URL + 'modal.html',
-          title: 'Eingabe erfassen',
-          height: 680,
-          fullscreen: false
-        });
-      }
+      title: 'SG Eingabe',
+      text: 'Eingabe',
+      color: 'blue',
+      callback: openEntryModal
     }];
   },
 

@@ -1,52 +1,22 @@
-# SG Trello Eingabe Power-Up
+# SG Eingabe – Version 3
 
-Flache GitHub-Pages-Version für das Repository `liamgkfr/trello-powerup`.
+## Änderungen
 
-## Dateien im Repository
+- Anklickbarer Detail-Button **Eingabe** oben auf der geöffneten Trello-Karte.
+- Kein Kartenbutton mehr im eingeklappten Bereich **Power-Ups**.
+- Nur noch ein Eingabeschritt.
+- Schaltfläche **Eingabe** speichert sofort den Kommentar und markiert den Fälligkeitstermin als erledigt.
+- Die Trello-Autorisierung wird nur beim ersten Speichern automatisch geöffnet.
 
-Alle Dateien müssen direkt im Branch `main` liegen:
+## Erforderliche Capabilities
 
-- `index.html`
-- `powerup.js`
-- `modal.html`
-- `modal.js`
-- `style.css`
-- `icon.svg`
+In der Power-Up-Verwaltung aktivieren:
 
-## GitHub Pages
+- Card Detail Badges
+- Card Badges
 
-1. Repository `trello-powerup` öffnen.
-2. `Settings` > `Pages`.
-3. Unter `Build and deployment` die Quelle `Deploy from a branch` wählen.
-4. Branch `main` und Ordner `/ (root)` wählen.
-5. Speichern.
+`Card Buttons` kann deaktiviert werden.
 
-Die Website lautet anschließend:
+## Installation
 
-`https://liamgkfr.github.io/trello-powerup/`
-
-Connector URL für Trello:
-
-`https://liamgkfr.github.io/trello-powerup/index.html`
-
-## Trello-Konfiguration
-
-In der Power-Up-Verwaltung:
-
-- Iframe Connector URL: `https://liamgkfr.github.io/trello-powerup/index.html`
-- Allowed Origin/Domain, falls abgefragt: `https://liamgkfr.github.io`
-- Capability `card-buttons` aktivieren, falls die Verwaltung dies separat verlangt.
-
-Anschließend das Board mit `Strg + F5` neu laden und eine Karte öffnen.
-
-## Funktion
-
-- Kartenbutton `Eingabe erfassen`
-- Pflichtfeld `Name`
-- optionales Feld `Bemerkung`
-- gesonderte Prüfseite
-- verbindliche Bestätigung per Checkbox
-- Speicherung in den Shared-Daten der Karte
-- Versuch, zusätzlich einen Kartenkommentar anzulegen
-
-Beim ersten Erstellen eines Kartenkommentars kann Trello eine Autorisierung anzeigen. Wird diese nicht erteilt, bleibt der Eintrag trotzdem in den Power-Up-Daten der Karte gespeichert.
+Alle Dateien direkt in den Root des GitHub-Repositorys hochladen. Den bestehenden API-Key in `config.js` beibehalten.
