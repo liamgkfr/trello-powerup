@@ -2,7 +2,7 @@
 'use strict';
 
 const CONFIG = window.POWER_UP_CONFIG;
-const t = TrelloPowerUp.iframe(CONFIG);
+const t = TrelloPowerUp.iframe(Object.assign({}, CONFIG));
 const form = document.getElementById('entry-form');
 const nameInput = document.getElementById('name');
 const remarkInput = document.getElementById('remark');
