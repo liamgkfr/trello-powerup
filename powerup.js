@@ -22,8 +22,10 @@ if (!CONFIG || !CONFIG.appKey || !CONFIG.appName) {
 function openInputModal(t) {
   return t.modal({
     url: './modal.html',
-    title: 'Eingabe',
-    height: 520,
+    title: 'ERLEDIGT',
+    text: '✅ ERLEDIGT',
+    color: 'green',
+    height: 720,
     fullscreen: false
   });
 }
