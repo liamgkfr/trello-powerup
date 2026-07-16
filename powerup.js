@@ -31,4 +31,4 @@ TrelloPowerUp.initialize({
         }];
       });
   }
-}, CONFIG);
+}, Object.assign({}, CONFIG));
