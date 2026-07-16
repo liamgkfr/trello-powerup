@@ -3,39 +3,52 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eingabe</title>
+  <title>Erledigt melden</title>
   <link rel="stylesheet" href="https://p.trellocdn.com/power-up.min.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <main class="shell">
     <section id="step-entry" class="panel" aria-labelledby="entry-heading">
-      <h1 id="entry-heading">Eingabe</h1>
-      <p class="intro">Name und Bemerkung eintragen. Mit „Eingabe“ werden der Kommentar gespeichert und die Karte als erledigt markiert.</p>
+      <div class="header-mark" aria-hidden="true">✓</div>
+      <div class="heading-group">
+        <h1 id="entry-heading">Aufgabe erledigt melden</h1>
+        <p class="intro">Trage deinen Namen und bei Bedarf eine Bemerkung ein. Mit „ERLEDIGT“ wird ein Kommentar erstellt und die Karte als erledigt markiert.</p>
+      </div>
 
       <form id="entry-form" novalidate>
-        <label for="name">Name <span aria-hidden="true">*</span></label>
-        <input id="name" name="name" type="text" maxlength="100" autocomplete="name" required>
-        <p id="name-error" class="error" role="alert" hidden>Bitte einen Namen eingeben.</p>
+        <div class="field-group">
+          <label for="name">Name <span class="required" aria-hidden="true">*</span></label>
+          <input id="name" name="name" type="text" maxlength="100" autocomplete="name" placeholder="Vor- und Nachname" required>
+          <p id="name-error" class="error" role="alert" hidden>Bitte einen Namen eingeben.</p>
+        </div>
 
-        <label for="remark">Bemerkung</label>
-        <textarea id="remark" name="remark" rows="7" maxlength="2000" placeholder="Bemerkung eingeben"></textarea>
-        <div class="counter"><span id="remark-count">0</span>/2000</div>
+        <div class="field-group">
+          <div class="label-row">
+            <label for="remark">Bemerkung</label>
+            <span class="optional">optional</span>
+          </div>
+          <textarea id="remark" name="remark" rows="8" maxlength="2000" placeholder="Zusätzliche Hinweise, Abweichungen oder Rückfragen"></textarea>
+          <div class="counter"><span id="remark-count">0</span>/2000</div>
+        </div>
 
         <p id="save-status" class="status" role="status" aria-live="polite"></p>
 
         <div class="actions">
           <button type="button" class="secondary" id="cancel-entry">Abbrechen</button>
-          <button type="submit" class="primary" id="submit-entry">Eingabe</button>
+          <button type="submit" class="primary done-button" id="submit-entry">
+            <span class="button-check" aria-hidden="true">✓</span>
+            ERLEDIGT
+          </button>
         </div>
       </form>
     </section>
 
     <section id="step-success" class="panel success" aria-labelledby="success-heading" hidden>
       <div class="success-mark" aria-hidden="true">✓</div>
-      <h1 id="success-heading">Eingabe gespeichert</h1>
+      <h1 id="success-heading">Als erledigt gespeichert</h1>
       <p>Der Kommentar wurde hinzugefügt und die Karte wurde als erledigt markiert.</p>
-      <button type="button" class="primary full" id="close-modal">Fenster schließen</button>
+      <button type="button" class="primary done-button full" id="close-modal">Fenster schließen</button>
     </section>
   </main>
 

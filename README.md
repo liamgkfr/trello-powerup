@@ -1,22 +1,18 @@
-# SG Eingabe – Version 3
+# Trello Power-Up: ERLEDIGT
 
-## Änderungen
+Diese Version zeigt auf der geöffneten Karte einen grünen Detail-Button **ERLEDIGT**.
+Beim Öffnen erscheint ein größeres, vereinfachtes Formular mit Name, optionaler Bemerkung und nur einer abschließenden Aktion.
 
-- Anklickbarer Detail-Button **Eingabe** oben auf der geöffneten Trello-Karte.
-- Kein Kartenbutton mehr im eingeklappten Bereich **Power-Ups**.
-- Nur noch ein Eingabeschritt.
-- Schaltfläche **Eingabe** speichert sofort den Kommentar und markiert den Fälligkeitstermin als erledigt.
-- Die Trello-Autorisierung wird nur beim ersten Speichern automatisch geöffnet.
+## Enthaltene Funktionen
 
-## Erforderliche Capabilities
+- grüner Kartenbutton **ERLEDIGT**
+- größeres Modal mit 760 px Höhe
+- direkter Ablauf ohne zweite Prüfseite
+- Kommentar auf der Karte
+- Fälligkeitsstatus `dueComplete = true`
+- Speicherung der letzten Eingabe in den Power-Up-Daten
 
-In der Power-Up-Verwaltung aktivieren:
+## Wichtig
 
-- Card Detail Badges
-- Card Badges
-
-`Card Buttons` kann deaktiviert werden.
-
-## Installation
-
-Alle Dateien direkt in den Root des GitHub-Repositorys hochladen. Den bestehenden API-Key in `config.js` beibehalten.
+Die vorhandene `config.js` mit deinem echten Trello-API-Key beibehalten oder den Key nach dem Upload erneut eintragen.
+In Trello muss die Capability **Card Detail Badges** aktiviert sein.

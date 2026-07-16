@@ -7,8 +7,8 @@ const CONFIG = window.POWER_UP_CONFIG;
 function openEntryModal(t) {
   return t.modal({
     url: BASE_URL + 'modal.html',
-    title: 'Eingabe',
-    height: 560,
+    title: 'Erledigt melden',
+    height: 760,
     fullscreen: false
   });
 }
@@ -16,9 +16,9 @@ function openEntryModal(t) {
 TrelloPowerUp.initialize({
   'card-detail-badges': function cardDetailBadges() {
     return [{
-      title: 'SG Eingabe',
-      text: 'Eingabe',
-      color: 'blue',
+      title: 'ERLEDIGT',
+      text: 'ERLEDIGT',
+      color: 'green',
       callback: openEntryModal
     }];
   },
@@ -28,7 +28,7 @@ TrelloPowerUp.initialize({
       .then(function renderBadge(lastEntry) {
         if (!lastEntry || !lastEntry.name) return [];
         return [{
-          text: 'Bestätigt: ' + lastEntry.name,
+          text: 'Erledigt: ' + lastEntry.name,
           color: 'green'
         }];
       });
